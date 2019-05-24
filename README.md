@@ -7,60 +7,43 @@
 <b>Beschrijving van het project</b><br></b><br>
 <b>Databases</b><br>
 <b>Planning</b><br>
-Inhoudsopgave 
-Planning
-Rollen verdeling
-Beschrijving van het project
-Databases
-Planning
-Interne rollen verdeling 
+<b>Interne rollen verdeling </b><br>
+<b>Beschrijving van het project </b><br>
 
-Interne rollen verdeling
+Een website voor een club, met een inlogsysteem voor leden.<br>
+Daarnaast een evenementen pagina waar leden op in kunnen schrijven.<br>
+De leden kunnen zelf een evenement toevoegen.<br>
+Inschrijven op een evenement kan alleen als je als lid ingelogd bent op de website.<br>
+De databases:<br>
+Users<br>
+user_id naam<br>
+email<br>
+wachtwoord<br>
+geaccepteerd ja/nee<br>
 
+Evenementen<br>
+evenement_id<br>
+datum<br>
+omschrijving<br>
+geannuleerd?<br>
 
+Pages: <br>
 
-Beschrijving van het project
-Beschrijving van het project 
+landingspage log in velden user/password -> evenementen pagina die uit de database gehaald worden button nieuwe aanmelding -> nieuwe pagina met formulier naam/email/password<br>
+evenementen pagina: lijst evenementen knoppen inschrijven/uitschrijven/ lijst meegaande leden/wijzigen->zelfde form voor nieuw event met opgehaalde data uit de database nieuwe evenement toevoegen button -> formulier new event button lid -> lijst alle leden<br>
+Databases: <br>
 
-master
-
-Een website voor een club, met een inlogsysteem voor leden.
-Daarnaast een evenementen pagina waar leden op in kunnen schrijven.
-De leden kunnen zelf een evenement toevoegen.
-Inschrijven op een evenement kan alleen als je als lid ingelogd bent op de website.
-De databases:
-Users
-user_id naam
-email
-wachtwoord
-geaccepteerd ja/nee
-
-Evenementen
-evenement_id
-datum
-omschrijving
-geannuleerd?
-master
-
-Pages: 
-
-landingspage log in velden user/password -> evenementen pagina die uit de database gehaald worden button nieuwe aanmelding -> nieuwe pagina met formulier naam/email/password
-evenementen pagina: lijst evenementen knoppen inschrijven/uitschrijven/ lijst meegaande leden/wijzigen->zelfde form voor nieuw event met opgehaalde data uit de database nieuwe evenement toevoegen button -> formulier new event button lid -> lijst alle leden
-Databases: 
-
-Users
-user_id integer primary key
-naam varchar
-email varchar
-toegelaten boolean default is false
-wachtwoord varchar
-Evenement evenement_id integer primary key datum date omschrijving text geannuleerd tinyInt
+<b>Users</b><br>
+user_id integer primary key<br>
+naam varchar<br>
+email varchar<br>
+toegelaten boolean default is false<br>
+wachtwoord varchar<br>
+<b>Evenement</b> <br>
+evenement_id integer primary key <br>
+datum date<br>
+omschrijving text <br>
+geannuleerd tinyInt<br>
 
 
-evenement_id integer primary key
-datum date
-omschrijving text
-geannuleerd tinyInt
-Evenement/user
-evenement_id
-user_id
+
