@@ -3,9 +3,9 @@
 require_once 'db.php';
 
 
-class events extends db
+class users extends db
 {
-    private $event_id, $omschrijving, $datum, $geanulleerd;
+    private $user_id, $email, $naam, $toegelaten, $wachtwoord;
     
     
     public function getAllData($table = null){
@@ -30,8 +30,4 @@ class events extends db
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
         $stmt->execute();
     }
-
-   // public function insertData($table = null, $omschrijving = null, $datum, $geanulleerd = 0){
-    //    $stmt = $this->conn->prepare("INSERT INTO ".$table."('omschrijving',  VALUES)
-   //}
 }
