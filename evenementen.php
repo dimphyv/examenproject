@@ -1,3 +1,13 @@
+<?php
+//require_once 'db.php';
+require_once 'events.php';
+        
+        $events = new events();
+        $evenementen = $events->getAllData('evenementen');
+
+        var_dump($evenementen);
+        
+        ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,13 +24,7 @@
     <h1>Evenementen</h1>
     <div class="container">
 		<div class="row">
-        <?php
-        $events = new events();
-        $evenementen = $events->getAllData();
-
-        var_dump($evenemeten);
-        
-        ?>
+       
         </div>
     </div>
     <!-- Optional JavaScript -->
