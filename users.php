@@ -26,6 +26,15 @@ class users extends db
         var_dump($result);
     }
 
+    //vraag gegevens op , op basis van email
+    public function getUserByEmail($table = null, $email = null){
+        $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE email =".$email); 
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+
     //een user verwijderen uit de database
     public function deleteDataById($table = null, $id = null){
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
@@ -48,6 +57,17 @@ class users extends db
     public function alterUserData($table, $naam, $email, $wachtwoord){
         $stmt = $this->conn->prepare("UPDATE".$table."SET('naam'=$naam, 'email'=$email, 'wachtwoord'=$wachtwoord)");
         $stmt->execute();
+
+    }
+
+    //methode om wachtwoord en email te checken
+    public function checkUser($table, $email, $wachtwoord){
+        $user = $this->getUserByEmail($table, $email);
+        if (count($user)=1){
+            return $user['wachtwoord']===$wachtwoord;
+        }
+        return false;
+
 
     }
 }
