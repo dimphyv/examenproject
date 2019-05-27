@@ -65,7 +65,11 @@ class users extends db
         $user = $this->getUserByEmail($table, $email);
         var_dump($user);
         if (isset($user) && count($user)==1){
-            return $user[0]['wachtwoord']===$wachtwoord;
+            if ($user[0]['wachtwoord']===$wachtwoord)
+            {
+                setcookie("usercheckedid",$user[0]['user_id'],time()+600);
+                return true;
+            }
         }
         return false;
 

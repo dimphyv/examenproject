@@ -24,6 +24,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $userFound = $user->checkuser("users", $email, $password);
 
     if($userFound) {
+      //header('Location: evenementen.php?user_id='.$user[0]['user_id']);
       relocator('evenementen.php');
     } else {
       $_SESSION['status'] = array('failed','Wrong email or password');
