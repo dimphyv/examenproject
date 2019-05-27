@@ -5,7 +5,7 @@ require_once 'events.php';
         $events = new events();
         $evenementen = $events->getAllData('evenementen');
 
-        var_dump($evenementen);
+        //var_dump($evenementen);
         
         ?>
 <!doctype html>
@@ -45,6 +45,9 @@ require_once 'events.php';
                   <td><?php echo $row['evenement_id']; ?></td>
                   <td><?php echo $row['datum']; ?></td>
                   <td><?php echo $row['omschrijving']; ?></td>
+                  <td><a href="edit.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Inschrijven</a></td>
+                  <td><a href="delete.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Deelnemers</a></td>
+                  <td><a href="delete.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
                 </tr>
                 <?php $counter++ ; ?>
 
@@ -53,7 +56,8 @@ require_once 'events.php';
           </tr>
           </tbody>
         </table>
-        <a href="add.php">Voeg een nieuwe toe</a>
+        <a type="button" class="btn btn-update" href="add.php"> Nieuw evenement </a>
+        <a type="button" class="btn btn-update" href="add.php"> Leden </a>
       </div>
     </div>
 
