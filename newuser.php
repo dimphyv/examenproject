@@ -13,16 +13,16 @@
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
      <link href="css/main.css">
-     <title>Login</title>
+     <title>Nieuwe deelnemer</title>
    </head>
 
    <body>
        <div class="container">
          <div class="row">
            <div class="col-8 offset-2">
-             <h1 class="text-center mt-2 pt-5 pb-2">Login</h1>
+             <h1 class="text-center mt-2 pt-5 pb-2">Nieuwe deelnemer</h1>
              <div class="row">
-               <form action="control.php" method="POST" class="mb-3 pl-2 pr-2">
+               <form action="aanmelding.php" method="POST" class="mb-3 pl-2 pr-2">
                  <div class="form-group">
                  <div class="form-group">
                   <label for="naam">Naam</label>
