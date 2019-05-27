@@ -5,7 +5,7 @@ require_once 'events.php';
         $events = new events();
         $evenementen = $events->getAllData('evenementen');
 
-        var_dump($evenementen);
+        //var_dump($evenementen);
         
         ?>
 <!doctype html>
