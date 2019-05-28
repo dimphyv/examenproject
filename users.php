@@ -1,9 +1,5 @@
 <?php
-
 require_once 'db.php';
-
-
-
 class users extends db
 {
     private $user_id, $email, $naam, $toegelaten, $wachtwoord;
@@ -25,17 +21,15 @@ class users extends db
         $result = $stmt->fetchAll();
         var_dump($result);
     }
-
-     //vraag gegevens op , op basis van user email
-     public function getUserByEmail($table = null, $email = null){
-        $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE email =".$email); 
+    //vraag gegevens op , op basis van email
+    public function getUserByEmail($table = null, $email = null){
+        $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE email = '".$email."'"); 
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();
         return $result;
     }
-
-
+    
     //een user verwijderen uit de database
     public function deleteDataById($table = null, $id = null){
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
@@ -52,24 +46,23 @@ class users extends db
     public function wijzig_toelating($table, $user_id, $toegelaten){
         $stmt = $this->conn->prepare("UPDATE".$table."SET('toegelaten' = $toegelaten)");
         $stmt->execute();
-
     }
     //methode om gebruiker te wijzigen, geef tabel, naam, email, wachtwoord mee)
     public function alterUserData($table, $naam, $email, $wachtwoord){
         $stmt = $this->conn->prepare("UPDATE".$table."SET('naam'=$naam, 'email'=$email, 'wachtwoord'=$wachtwoord)");
         $stmt->execute();
-
     }
-
-      //methode om wachtwoord en email te checken
-      public function checkUser($table, $email, $wachtwoord){
+     //methode om wachtwoord en email te checken
+     public function checkUser($table, $email, $wachtwoord){
         $user = $this->getUserByEmail($table, $email);
-        if (count($user)==1){
-            return $user['wachtwoord']===$wachtwoord;
+        var_dump($user);
+        if (isset($user) && count($user)==1){
+            if ($user[0]['wachtwoord']===$wachtwoord)
+            {
+                setcookie("usercheckedid",$user[0]['user_id'],time()+600);
+                return true;
+            }
         }
         return false;
-
-
     }
 }
-

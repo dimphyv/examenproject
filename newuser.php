@@ -48,7 +48,6 @@
               echo "<p>".$_SESSION['status'][1]."</p>";
               echo '</div>';
             }
-
           }
          ?>
        </div>

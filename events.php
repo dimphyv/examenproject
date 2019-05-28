@@ -1,7 +1,5 @@
 <?php
-
 require_once 'db.php';
-
 //events objecten maken gebruik van database connectie object db, daarom extends en file import
 class events extends db
 {
@@ -25,13 +23,11 @@ class events extends db
         $result = $stmt->fetchAll();
         var_dump($result);
     }
-
     //verwijder evenement door meegeven van id
     public function deleteDataById($table = null, $id = null){
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
         $stmt->execute();
     }
-
    // public function insertData($table = null, $omschrijving = null, $datum, $geanulleerd = 0){
     //    $stmt = $this->conn->prepare("INSERT INTO ".$table."('omschrijving',  VALUES)
    //}

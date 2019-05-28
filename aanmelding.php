@@ -1,15 +1,10 @@
 <?php
-
 // if not load continue with code
 require_once 'function.php';
-
 // if not load, stop programm
 require 'db.php';
 require 'users.php';
-
-
 session_start();
-
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['naam']) AND isset($_POST['email']) AND isset($_POST['password']))
@@ -20,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     
     $user = new users();
     $newuser = $user->insertData('users',$email, $naam, 0, $password);
-    header('Location: new_user_melding.php');
+    header('Location: evenementen.php');
     //relocater('evenementen.php');
 /*
     if($userFound) {
