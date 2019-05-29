@@ -28,7 +28,7 @@ class users extends db
 
     //vraag gegevens op , op basis van email
     public function getUserByEmail($table = null, $email = null){
-        $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE email =".$email); 
+        $stmt = $this->conn->prepare("SELECT * FROM ".$table." WHERE email ='".$email."'"); 
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();
