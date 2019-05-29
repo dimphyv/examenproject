@@ -7,6 +7,7 @@
     <title>Aanmeldingsbevestiging</title>
 </head>
 <body>
-    <h4>Bedankt voor uw aanmelding, u krijgt binnenkort een email als u goedgekeurd bent.</h4>
+    <h4>Bedankt voor uw aanmelding, u ontvangt binnenkort een email als u goedgekeurd bent.</h4>
+    
 </body>
 </html>

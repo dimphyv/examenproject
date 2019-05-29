@@ -4,6 +4,7 @@ include_once 'function.php';
 // if not load, stop programm
 require_once 'db.php';
 require_once 'users.php';
+
 session_start();
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
@@ -22,6 +23,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
       relocator('evenementen.php');
     } else {
       $_SESSION['status'] = array('failed','Wrong email or password');
+      echo $_SESSION['status'];
       relocator('index.php');
     }
   }

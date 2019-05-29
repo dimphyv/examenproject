@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     
     $user = new users();
     $newuser = $user->insertData('users',$email, $naam, 0, $password);
-    header('Location: evenementen.php');
+    header('Location: new_user_melding.php');
     //relocater('evenementen.php');
 /*
     if($userFound) {
