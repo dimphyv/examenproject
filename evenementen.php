@@ -1,7 +1,8 @@
 <?php
 //require_once 'db.php';
 require_once 'events.php';
-        
+require_once 'eventsusers.php';
+
         $events = new events();
         $evenementen = $events->getAllData('evenementen');
 
@@ -21,8 +22,8 @@ require_once 'events.php';
     <title>Club Evenementen</title>
   </head>
   <body>
-  
-    <h1 class="text-center">Evenementen</h1>
+    <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0; ?>;
+    <h1 class="text-center">Evenementen <?php echo $usercheckid; ?></h1>
     <div class="row">
       <div class="col-8 offset-2">
         <table class="table table-hover">
@@ -45,6 +46,17 @@ require_once 'events.php';
                   <td><?php echo $row['evenement_id']; ?></td>
                   <td><?php echo $row['datum']; ?></td>
                   <td><?php echo $row['omschrijving']; ?></td>
+                  <?php
+                    $eventuser = new eventsusers();
+                    if($eventuser->existEventUser('evenementuser', $row['evenement_id'] , $usercheckid)){
+                      echo '<td><a href="uitschrijven.php?event_id='. $row['evenement_id'].'&user_id='.$usercheckid.'"  class="btn btn-success" type="button">Uitschrijven</a></td>';
+                    } else {
+                      echo '<td><a href="inschrijven.php?event_id='. $row['evenement_id'].'&user_id='.$usercheckid.'"  class="btn btn-warning" type="button">Inschrijven</a></td>';
+                    }
+                  ?>
+                  
+                  <td><a href="deelnemers.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Deelnemers</a></td>
+                  <td><a href="wijzigenevenement.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
                 </tr>
                 <?php $counter++ ; ?>
 
@@ -53,7 +65,8 @@ require_once 'events.php';
           </tr>
           </tbody>
         </table>
-        <a href="add.php">Voeg een nieuwe toe</a>
+        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
+        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
       </div>
     </div>
 

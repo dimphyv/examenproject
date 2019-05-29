@@ -34,7 +34,6 @@ class users extends db
         $result = $stmt->fetchAll();
         return $result;
     }
-
     //een user verwijderen uit de database
     public function deleteDataById($table = null, $id = null){
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
@@ -63,7 +62,7 @@ class users extends db
     //methode om wachtwoord en email te checken
     public function checkUser($table, $email, $wachtwoord){
         $user = $this->getUserByEmail($table, $email);
-        if (count($user)=1){
+        if (count($user) > 0){
             return $user['wachtwoord']===$wachtwoord;
         }
         return false;
