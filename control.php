@@ -9,7 +9,7 @@ require_once 'users.php';
 
 
 session_start();
-
+$_SESSION['status'] = null;
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['new']))
@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $userFound = $user->checkuser("users", $email, $password);
 
     if($userFound) {
-      //header('Location: evenementen.php?user_id='.$user[0]['user_id']);
+      $_SESSION['status'] = null;
       relocator('evenementen.php');
     } else {
       $_SESSION['status'] = array('failed','Wrong email or password');

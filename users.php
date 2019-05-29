@@ -67,7 +67,7 @@ class users extends db
         if (isset($user) && count($user)==1){
             if ($user[0]['wachtwoord']===$wachtwoord)
             {
-                setcookie("usercheckedid",$user[0]['user_id'],time()+600);
+                setcookie("usercheckedid",$user[0]['user_id'],time()+6000);
                 return true;
             }
         }
