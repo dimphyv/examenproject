@@ -45,12 +45,14 @@ class users extends db
     }
     //toelating wijzigen, 0 is niet toegelaten, 1 is toegelaten
     public function wijzig_toelating($table, $user_id, $toegelaten){
-        $stmt = $this->conn->prepare("UPDATE".$table."SET('toegelaten' = $toegelaten)");
+        $a = "UPDATE ".$table." SET toegelaten = $toegelaten  WHERE user_id = $user_id";
+        var_dump($a);
+        $stmt = $this->conn->prepare($a);
         $stmt->execute();
     }
     //methode om gebruiker te wijzigen, geef tabel, naam, email, wachtwoord mee)
     public function alterUserData($table, $naam, $email, $wachtwoord){
-        $stmt = $this->conn->prepare("UPDATE".$table."SET('naam'=$naam, 'email'=$email, 'wachtwoord'=$wachtwoord)");
+        $stmt = $this->conn->prepare("UPDATE s".$table." SET ('naam'=$naam, 'email'=$email, 'wachtwoord'=$wachtwoord)");
         $stmt->execute();
     }
      //methode om wachtwoord en email te checken
@@ -67,19 +69,7 @@ class users extends db
         return false;
     }
 
-     //methode om wachtwoord en email te checken
-     public function checkUser($table, $email, $wachtwoord){
-        $user = $this->getUserByEmail($table, $email);
-        var_dump($user);
-        if (isset($user) && count($user)==1){
-            if ($user[0]['wachtwoord']===$wachtwoord)
-            {
-                setcookie("usercheckedid",$user[0]['user_id'],time()+6000);
-                return true;
-            }
-        }
-        return false;
+    
 
-
-    }
+    
 }

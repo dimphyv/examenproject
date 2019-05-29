@@ -6,10 +6,7 @@ require_once 'db.php';
 require_once 'users.php';
 
 session_start();
-<<<<<<< HEAD
 $_SESSION['status'] = null;
-=======
->>>>>>> dim
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['new']))
@@ -23,11 +20,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $user = new users();
     $userFound = $user->checkuser("users", $email, $password);
     if($userFound) {
-<<<<<<< HEAD
       $_SESSION['status'] = null;
-=======
-      //header('Location: evenementen.php?user_id='.$user[0]['user_id']);
->>>>>>> dim
       relocator('evenementen.php');
     } else {
       $_SESSION['status'] = array('failed','Wrong email or password');

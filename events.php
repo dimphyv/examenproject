@@ -28,7 +28,6 @@ class events extends db
         $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
         $stmt->execute();
     }
-<<<<<<< HEAD
    
     public function insertData($table = null, $datum, $omschrijving = null){
         $a = "INSERT INTO ".$table." (`datum`, `omschrijving`) VALUES ('".$datum."','".$omschrijving."')";
@@ -38,9 +37,3 @@ class events extends db
 }
 
 
-=======
-   // public function insertData($table = null, $omschrijving = null, $datum, $geanulleerd = 0){
-    //    $stmt = $this->conn->prepare("INSERT INTO ".$table."('omschrijving',  VALUES)
-   //}
-}
->>>>>>> dim
