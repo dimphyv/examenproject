@@ -17,6 +17,10 @@
    </head>
 
    <body>
+    <!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
        <div class="container">
          <div class="row">
            <div class="col-8 offset-2">
@@ -40,7 +44,6 @@
 
           <?php
           if(isset($_SESSION['status'])){
-            var_dump($_SESSION);
             if($_SESSION['status'][0] === 'failed'){
               echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
               echo "<p>".$_SESSION['status'][1]."</p>";
