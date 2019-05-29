@@ -2,6 +2,7 @@
   ini_set('display_error', 5);
   error_reporting(E_ALL);
   $index=0;
+  
   session_start();
 ?>
 
@@ -45,9 +46,10 @@
               echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
               echo "<p>".$_SESSION['status'][1]."</p>";
               echo '</div>';
+              
+              
             }
-
-          }
+          }*/
          ?>
        </div>
      </div>
