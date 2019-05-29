@@ -5,7 +5,6 @@ require_once 'eventsusers.php';
 
         $events = new events();
         $evenementen = $events->getAllData('evenementen');
-
         //var_dump($evenementen);
         
         ?>
