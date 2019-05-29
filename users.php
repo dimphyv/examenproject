@@ -32,9 +32,10 @@ class users extends db
     
     //een user verwijderen uit de database
     public function deleteDataById($table = null, $id = null){
-        $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE task_id =".$id); 
+        $stmt = $this->conn->prepare("DELETE FROM ".$table." WHERE user_id =".$id); 
         $stmt->execute();
     }
+   
     //nieuwe data aan database toevoegen
     public function insertData($table = null, $email, $naam, $toegelaten=0, $wachtwoord){
         $a ="INSERT INTO ".$table." (email, naam, toegelaten, wachtwoord) VALUES ('".$email."','". $naam."','". $toegelaten."','". $wachtwoord."')";
