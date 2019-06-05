@@ -49,10 +49,7 @@ $ledenlijst = $leden->getAllData('users');
               <th scope="col">Email</th>
               <th scope="col">Geaccepteerd</th>
               <th></th>
-<<<<<<< HEAD
               <th></th>
-=======
->>>>>>> dim
             </tr>
           </thead>
           <tbody>
@@ -78,13 +75,8 @@ $ledenlijst = $leden->getAllData('users');
             <?php endif; ?>
           </tr>
           </tbody>
-<<<<<<< HEAD
         </table>
         
-=======
-        </table> 
-        <td><a type="button" class="btn btn-update" href="newuser.php" id="newuser"> Nieuwe deelnemer </a></td>
->>>>>>> dim
         <!--
         <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
       </div>
