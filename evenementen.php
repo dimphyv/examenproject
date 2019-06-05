@@ -2,12 +2,14 @@
 //require_once 'db.php';
 require_once 'events.php';
 require_once 'eventsusers.php';
+session_start();
+$events = new events();
+$evenementen = $events->getAllData('evenementen');
+$_SESSION['returnPage'] = 'leden.php';
+//var_dump($_SESSION);     
+?>
 
-        $events = new events();
-        $evenementen = $events->getAllData('evenementen');
-        //var_dump($evenementen);
-        
-        ?>
+
 <!doctype html>
 <html lang="en">
   <head>

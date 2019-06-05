@@ -5,6 +5,12 @@ require_once 'function.php';
 require 'db.php';
 require 'users.php';
 session_start();
+var_dump($_SESSION);
+//die();
+$_SESSION['newUserStatus'] = null;
+$returnPage = isSet($_SESSION['returnPage']) ? $_SESSION['returnPage'] : 'index.php' ;
+var_dump($returnPage);
+//die();
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['naam']) AND isset($_POST['email']) AND isset($_POST['password']))
@@ -15,7 +21,8 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     
     $user = new users();
     $newuser = $user->insertData('users',$email, $naam, 0, $password);
-    header('Location: new_user_melding.php');
+    $_SESSION['newUserStatus'] = array('added','Bedankt voor uw aanmelding, u ontvangt binnenkort een email als u goedgekeurd bent.');
+    //header('Location: new_user_melding.php');
     //relocater('evenementen.php');
 /*
     if($userFound) {
@@ -26,5 +33,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     }
     */
   }else //relocator('newuser.php');
-  header('Location: newuser.php');
+  {//header('Location: newuser.php')
+  }
 }
+header('Location: '.$returnPage);

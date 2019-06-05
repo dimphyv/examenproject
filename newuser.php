@@ -3,6 +3,11 @@
   error_reporting(E_ALL);
   $index=0;
   session_start();
+  //$_SESSION['returnPage'] = 'leden.php';
+
+  //$_SESSION['returnPage'] = array('failed','Wrong email or password');
+  //$returnpage = isset($_GET['returnpage']) ? $_GET['returnpage'] : '' ;
+  //var_dump($returnpage);
 ?>
 
 <html>
@@ -36,7 +41,7 @@
                   <label for="password">Password</label>
                   <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Aanmelden</button>
+                <button type="submit" class="btn btn-primary">Toevoegen</button>
                </form>
              </div>
            </div>

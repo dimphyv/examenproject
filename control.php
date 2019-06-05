@@ -7,6 +7,8 @@ require_once 'users.php';
 
 session_start();
 $_SESSION['status'] = null;
+$_SESSION['newUserStatus'] = null;
+$_SESSION['returnPage'] = 'index.php';
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['new']))
@@ -20,11 +22,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $user = new users();
     $userFound = $user->checkuser("users", $email, $password);
     if($userFound) {
+      //setcookie("usercheckedid",$user[0]['user_id'],time()+600);
       $_SESSION['status'] = null;
       relocator('evenementen.php');
     } else {
       $_SESSION['status'] = array('failed','Wrong email or password');
-      echo $_SESSION['status'];
+      //echo $_SESSION['status'];
       relocator('index.php');
     }
   }

@@ -38,7 +38,7 @@ class users extends db
     //nieuwe data aan database toevoegen
     public function insertData($table = null, $email, $naam, $toegelaten=0, $wachtwoord){
         $a ="INSERT INTO ".$table." (email, naam, toegelaten, wachtwoord) VALUES ('".$email."','". $naam."','". $toegelaten."','". $wachtwoord."')";
-        var_dump($a);
+        //var_dump($a);
         $stmt = $this->conn->prepare($a);
         $stmt->execute();
     }
@@ -58,6 +58,7 @@ class users extends db
      public function checkUser($table, $email, $wachtwoord){
         $user = $this->getUserByEmail($table, $email);
         var_dump($user);
+        //die();
         if (isset($user) && count($user)==1){
             if ($user[0]['wachtwoord']===$wachtwoord)
             {

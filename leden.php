@@ -5,8 +5,8 @@ require_once 'users.php';
 //require_once 'db.php';
 
         
-        $leden = new users();
-        $ledenlijst = $leden->getAllData('users');
+$leden = new users();
+$ledenlijst = $leden->getAllData('users');
         //var_dump($ledenlijst);
         
         ?>
@@ -24,6 +24,20 @@ require_once 'users.php';
   </head>
   <body>
    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+        
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <a type="button" class="btn btn-update" href="newuser.php" id="newuser"> Nieuwe deelnemer </a></td>
+          <a type="button" class="btn btn-update" href="evenementen.php" id="newevent">Evenement</a>
+          <a type="button" href="logoff.php" class="btn btn-outline-success my-2 my-sm-0">Afmelden</a>
+        </form>
+      </div>
+    </nav>
+
     <h1 class="text-center">Leden</h1>
     <div class="row">
       <div class="col-8 offset-2">
@@ -34,7 +48,8 @@ require_once 'users.php';
               <th scope="col">Naam</th>
               <th scope="col">Email</th>
               <th scope="col">Geaccepteerd</th>
-              
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +76,7 @@ require_once 'users.php';
           </tr>
           </tbody>
         </table>
-        <td><a type="button" class="btn btn-update" href="newuser.php" id="newuser"> Nieuwe deelnemer </a></td>
+        
         <!--
         <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
       </div>
