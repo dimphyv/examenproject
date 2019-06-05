@@ -32,7 +32,7 @@ require_once 'eventsusers.php';
         </div>
         <form class="form-inline my-2 my-lg-0">
         <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
+        <a type="button" class="btn btn-update" href="leden.php" id="users">Leden</a>
           <a type="button" href="logoff.php" class="btn btn-outline-success my-2 my-sm-0">Afmelden</a>
         </form>
       </div>
@@ -49,6 +49,7 @@ require_once 'eventsusers.php';
               <th scope="col">ID</th>
               <th scope="col">Datum</th>
               <th scope="col">Omschrijving</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -82,8 +83,6 @@ require_once 'eventsusers.php';
           </tr>
           </tbody>
         </table>
-        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
       </div>
     </div>
 

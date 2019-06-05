@@ -1,4 +1,5 @@
 <?php
+
 require_once 'db.php';
 
 
@@ -33,7 +34,14 @@ class events extends db
         $a = "INSERT INTO ".$table." (`datum`, `omschrijving`) VALUES ('".$datum."','".$omschrijving."')";
         $stmt = $this->conn->prepare($a);
         $stmt->execute();
-   }
+    }
+
+    public function updateData($table = null, $datum, $omschrijving = null){
+        $a = "INSERT INTO ".$table." (`datum`, `omschrijving`) VALUES ('".$datum."','".$omschrijving."')";
+        $stmt = $this->conn->prepare($a);
+        $stmt->execute();
+}
+
 }
 
 
