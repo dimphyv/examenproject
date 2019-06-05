@@ -21,6 +21,7 @@ $_SESSION['returnPage'] = 'leden.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Club Evenementen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0 ; ?>
@@ -42,7 +43,7 @@ $_SESSION['returnPage'] = 'leden.php';
 
 
 
-    <h1 class="text-center">Evenementen <?php echo $usercheckid; ?></h1>
+    <h1 class="text-center">Evenementen</h1>
     <div class="row">
       <div class="col-8 offset-2">
         <table class="table table-hover">
