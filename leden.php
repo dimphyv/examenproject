@@ -34,7 +34,7 @@ require_once 'users.php';
               <th scope="col">Naam</th>
               <th scope="col">Email</th>
               <th scope="col">Geaccepteerd</th>
-              
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -60,7 +60,7 @@ require_once 'users.php';
             <?php endif; ?>
           </tr>
           </tbody>
-        </table>
+        </table> 
         <td><a type="button" class="btn btn-update" href="newuser.php" id="newuser"> Nieuwe deelnemer </a></td>
         <!--
         <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
