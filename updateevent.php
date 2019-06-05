@@ -12,6 +12,7 @@ if(isset($_POST['cancel']))
 $events = new events();
 $omschrijving = $_POST['omschrijving'];
 $datum = $_POST['datum'];
-$evenementen = $events->updateData('evenementen',$datum,$omschrijving);
+$evenement_id = $_POST['evenement_id'];
+$evenementen = $events->updateData('evenementen',$datum,$omschrijving,$evenement_id);
 relocator('evenementen.php');
 ?>

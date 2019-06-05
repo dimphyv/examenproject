@@ -9,8 +9,14 @@ var_dump($_SESSION);
 //die();
 $_SESSION['newUserStatus'] = null;
 $returnPage = isSet($_SESSION['returnPage']) ? $_SESSION['returnPage'] : 'index.php' ;
-var_dump($returnPage);
+//var_dump($returnPage);
 //die();
+var_dump($_POST);
+//die();
+if(isset($_POST['cancel']))
+{
+    relocator('leden.php');
+} 
 if($_SERVER['REQUEST_METHOD']=="POST")
 {
   if(isset($_POST['naam']) AND isset($_POST['email']) AND isset($_POST['password']))

@@ -1,6 +1,13 @@
 <?php
-
-
+require_once 'function.php';
+require_once 'events.php';
+require_once 'db.php';
+var_dump($_GET);
+$events = new events();
+$event = $events->getDataById('evenementen', $_GET['id']);
+//$event = $events[0];
+var_dump($event);
+//die();
 ?>
 
 <html>
@@ -23,14 +30,15 @@
                <form action="updateevent.php" method="POST" class="mb-3 pl-2 pr-2">
                  <div class="form-group">
                   <label for="datum">Datum</label>
-                  <input type="date" class="form-control" id="date" aria-describedby="emailHelp" name="datum" placeholder="Datum">
+                  <input value="<?php echo $event['datum']; ?>" type="date" class="form-control" id="date" aria-describedby="emailHelp" name="datum" placeholder="Datum">
                 </div>
                 <div class="form-group">
                   <label for="omschrijving">Omschrijving evenement</label>
-                  <input type="text" class="form-control" id="omschrijving" name="omschrijving" placeholder="Omschrijving">
+                  <input value="<?php echo $event['omschrijving']; ?>" type="text" class="form-control" id="omschrijving" name="omschrijving" placeholder="Omschrijving">
                 </div>
                 <button type="submit" class="btn btn-primary" id="login">Wijzigen</button>
                 <button type="submit" class="btn btn-primary" id="cancel" name='cancel'>Annuleren</button>
+                <input value="<?php echo $event['evenement_id']; ?>" name="evenement_id" type="hidden">
                </form>
              </div>
            </div>

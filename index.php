@@ -44,6 +44,7 @@
               echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
               echo "<p>".$_SESSION['status'][1]."</p>";
               echo '</div>';
+              $_SESSION['status'] = null;
             }
 
           }
@@ -52,6 +53,7 @@
               echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
               echo "<p>".$_SESSION['newUserStatus'][1]."</p>";
               echo '</div>';
+              $_SESSION['newUserStatus'] = null;
             }
 
           }
