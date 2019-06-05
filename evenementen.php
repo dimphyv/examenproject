@@ -5,7 +5,6 @@ require_once 'eventsusers.php';
 
         $events = new events();
         $evenementen = $events->getAllData('evenementen');
-
         //var_dump($evenementen);
         
         ?>
@@ -22,7 +21,25 @@ require_once 'eventsusers.php';
     <title>Club Evenementen</title>
   </head>
   <body>
-    <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0; ?>;
+    <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0 ; ?>
+   
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+        
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
+        <a type="button" class="btn btn-update" href="leden.php" id="users">Leden</a>
+          <a type="button" href="logoff.php" class="btn btn-outline-success my-2 my-sm-0">Afmelden</a>
+        </form>
+      </div>
+    </nav>
+
+
+
     <h1 class="text-center">Evenementen <?php echo $usercheckid; ?></h1>
     <div class="row">
       <div class="col-8 offset-2">
@@ -32,6 +49,7 @@ require_once 'eventsusers.php';
               <th scope="col">ID</th>
               <th scope="col">Datum</th>
               <th scope="col">Omschrijving</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -65,8 +83,6 @@ require_once 'eventsusers.php';
           </tr>
           </tbody>
         </table>
-        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
       </div>
     </div>
 

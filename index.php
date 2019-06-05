@@ -40,7 +40,6 @@
 
           <?php
           if(isset($_SESSION['status'])){
-            var_dump($_SESSION);
             if($_SESSION['status'][0] === 'failed'){
               echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
               echo "<p>".$_SESSION['status'][1]."</p>";
