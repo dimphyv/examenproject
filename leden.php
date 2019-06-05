@@ -50,10 +50,7 @@ $ledenlijst = $leden->getAllData('users');
               <th scope="col">Email</th>
               <th scope="col">Geaccepteerd</th>
               <th></th>
-<<<<<<< HEAD
               <th></th>
-=======
->>>>>>> dim
             </tr>
           </thead>
           <tbody>
