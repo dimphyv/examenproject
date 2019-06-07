@@ -1,5 +1,5 @@
 <?php
-//require_once 'db.php';
+
 require_once 'events.php';
 require_once 'eventsusers.php';
 session_start();

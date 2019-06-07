@@ -1,10 +1,10 @@
 <?php
 require_once 'function.php';
-require_once 'events.php';
-require_once 'db.php';
+require_once 'users.php';
+//require_once 'db.php';
 
-$events = new events();
-$event = $events->getDataById('evenementen', $_GET['id']);
+$users = new users();
+$user = $users->getDataById('users', $_GET['id']);
 
 
 
@@ -18,27 +18,27 @@ $event = $events->getDataById('evenementen', $_GET['id']);
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
      <link href="css/main.css">
-     <title>Login</title>
+     <title>Wijzig leden informatie</title>
    </head>
 
    <body>
        <div class="container">
          <div class="row">
            <div class="col-8 offset-2">
-             <h1 class="text-center mt-2 pt-5 pb-2">Wijzigen evenement</h1>
+             <h1 class="text-center mt-2 pt-5 pb-2">Wijzigen deelnemer informatie</h1>
              <div class="row">
-               <form action="updateevent.php" method="POST" class="mb-3 pl-2 pr-2">
+               <form action="updateUser.php" method="POST" class="mb-3 pl-2 pr-2">
                  <div class="form-group">
-                  <label for="datum">Datum</label>
-                  <input value="<?php echo $event['datum']; ?>" type="date" class="form-control" id="date" aria-describedby="emailHelp" name="datum" placeholder="Datum">
+                  <label for="naam">Naam</label>
+                  <input value="<?php echo $user['naam']; ?>" type="text" class="form-control" id="text" aria-describedby="emailHelp" name="naam" placeholder="naam">
                 </div>
                 <div class="form-group">
-                  <label for="omschrijving">Omschrijving evenement</label>
-                  <input value="<?php echo $event['omschrijving']; ?>" type="text" class="form-control" id="omschrijving" name="omschrijving" placeholder="Omschrijving">
+                  <label for="email">Email</label>
+                  <input value="<?php echo $user['email']; ?>" type="email" class="form-control" id="email" name="email" placeholder="Email">
                 </div>
                 <button type="submit" class="btn btn-primary" id="login">Wijzigen</button>
                 <button type="submit" class="btn btn-primary" id="cancel" name='cancel'>Annuleren</button>
-                <input value="<?php echo $event['evenement_id']; ?>" name="evenement_id" type="hidden">
+                <input value="<?php echo $user['user_id']; ?>" name="user_id" type="hidden">
                </form>
              </div>
            </div>
