@@ -44,9 +44,9 @@ class users extends db
     }
     //toelating wijzigen, 0 is niet toegelaten, 1 is toegelaten
     public function wijzig_toelating($table, $user_id, $toegelaten){
-        $a = "UPDATE ".$table." SET toegelaten = $toegelaten  WHERE user_id = $user_id";
-        var_dump($a);
-        $stmt = $this->conn->prepare($a);
+        //$a = "UPDATE ".$table." SET toegelaten = $toegelaten  WHERE user_id = $user_id";
+        //var_dump($a);
+        $stmt = $this->conn->prepare("UPDATE ".$table." SET toegelaten = $toegelaten  WHERE user_id = $user_id");
         $stmt->execute();
     }
     //methode om gebruiker te wijzigen, geef tabel, naam, email, wachtwoord mee)

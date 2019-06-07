@@ -24,13 +24,13 @@
              <div class="row">
                <form action="control.php" method="POST" class="mb-3 pl-2 pr-2">
                  <div class="form-group">
-                  <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                  <label for="email">Email adres</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Voor email adres in">
                   <small id="emailHelp" class="form-text text-muted">Uw gegevens worden nergens anders voor gebruikt dan registratie.</small>
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  <label for="password">Wachtwoord</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Wachtwoord">
                 </div>
                 <button type="submit" class="btn btn-primary" id="login">Aanmelden</button>
                 <button type="submit" class="btn btn-primary" id="new" name='new'>Nieuw lid</button>
