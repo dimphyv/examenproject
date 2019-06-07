@@ -33,13 +33,13 @@
                   <label for="naam">Naam</label>
                   <input type="text" class="form-control" id="naam" name="naam" placeholder="Naam">
                 </div>
-                  <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                  <label for="email">Email adres</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Vul email adres in">
                   <small id="emailHelp" class="form-text text-muted">Uw gegevens worden nergens anders voor gebruikt dan registratie.</small>
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  <label for="password">Wachtwoord</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Vul wachtwoord in">
                 </div>
                 <button type="submit" class="btn btn-primary" id="add" name="add">Toevoegen</button>
                 <button type="submit" class="btn btn-primary" id="cancel" name="cancel">Anuleren</button>
