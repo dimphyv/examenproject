@@ -66,8 +66,9 @@ $ledenlijst = $leden->getAllData('users');
                   <td><?php if ($row['toegelaten'] == 0){
                             echo "nee";}
                             else echo "ja"; ?></td>
-                  <td><a type="button" class="btn btn-danger" href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder deelnemer</a></td>
-                  <td><a type="button" class="btn btn-success" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?>">Accepteer deelnemer</a></td>  
+                  <td><a type="button" class="btn btn-danger"  href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder deelnemer</a></td>
+                  <td><a type="button" class="btn btn-success  <?php if ($row['toegelaten'] == 1):?>disabled <?php endif ?>" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?> ">Accepteer deelnemer</a></td>  
+                  
                  <!-- ipv < ?php kan je ook <= zonder echo gebruiken -->
                 </tr>
                 <?php $counter++ ; ?>
