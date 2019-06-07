@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']=="POST")
       $_SESSION['status'] = null;
       relocator('evenementen.php');
     } else {
-      $_SESSION['status'] = array('failed','Wrong email or password');
+      $_SESSION['status'] = array('failed','Onbekend email/wachtwoord (of nog niet geaccepteerd)');
       //echo $_SESSION['status'];
       relocator('index.php');
     }

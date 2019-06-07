@@ -3,10 +3,10 @@
 require_once 'events.php';
 require_once 'eventsusers.php';
 session_start();
+// Opvragen van alle evenementen in database
 $events = new events();
 $evenementen = $events->getAllData('evenementen');
 $_SESSION['returnPage'] = 'leden.php';
-//var_dump($_SESSION);     
 ?>
 
 
