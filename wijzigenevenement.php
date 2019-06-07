@@ -2,12 +2,8 @@
 require_once 'function.php';
 require_once 'events.php';
 require_once 'db.php';
-var_dump($_GET);
 $events = new events();
 $event = $events->getDataById('evenementen', $_GET['id']);
-//$event = $events[0];
-var_dump($event);
-//die();
 ?>
 
 <html>

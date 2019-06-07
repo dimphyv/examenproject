@@ -3,10 +3,13 @@ require_once 'users.php';
 require_once 'events.php';
 
 session_start();
+// evenememt id ophalen uit GET
 $evenement_id = isset($_GET['evenement_id']) ? $_GET['evenement_id'] : 0 ;   
+// Leden opzoeken die voor een bepaald evenement zijn ingeschreven, het evenement_id is bepalend hiervoor
 $leden = new users();
 $ledenlijst = $leden->getEvenementData('users', $evenement_id);
 
+// Ophalen van de omschrijving van het betreffende event
 $events = new events();
 $event = $events->getDataById('evenementen' , $evenement_id);
 $eventnaam = isset($event) ? $event['omschrijving'] : "'onbekend'";
@@ -62,7 +65,6 @@ $eventnaam = isset($event) ? $event['omschrijving'] : "'onbekend'";
                   <td><?php echo $row['user_id']; ?></td>
                   <td><?php echo $row['naam']; ?></td>
                   <td><?php echo $row['email']; ?></td>
-                 <!-- ipv < ?php kan je ook <= zonder echo gebruiken -->
                 </tr>
                 <?php $counter++ ; ?>
 
@@ -72,7 +74,6 @@ $eventnaam = isset($event) ? $event['omschrijving'] : "'onbekend'";
           </tbody>
         </table>
         
-        <!--
       </div>
     </div>
 
