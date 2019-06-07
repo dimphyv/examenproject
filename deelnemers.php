@@ -1,18 +1,15 @@
 <?php
-
-
 require_once 'users.php';
 require_once 'events.php';
-//require_once 'db.php';
+
 session_start();
-$evenment_id = $_GET['evenement_id'];   
+$evenement_id = isset($_GET['evenement_id']) ? $_GET['evenement_id'] : 0 ;   
 $leden = new users();
-$ledenlijst = $leden->getEvenementData('users', $evenment_id);
+$ledenlijst = $leden->getEvenementData('users', $evenement_id);
 
 $events = new events();
-$event = $events->getDataById('evenementen' , $evenment_id);
-$eventnaam = isset($event) ? $event['omschrijving'] : "";
-        
+$event = $events->getDataById('evenementen' , $evenement_id);
+$eventnaam = isset($event) ? $event['omschrijving'] : "'onbekend'";
 ?>
 
 
@@ -53,9 +50,6 @@ $eventnaam = isset($event) ? $event['omschrijving'] : "";
               <th scope="col">ID</th>
               <th scope="col">Naam</th>
               <th scope="col">Email</th>
-              <th scope="col">Geaccepteerd</th>
-              <th></th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -68,11 +62,6 @@ $eventnaam = isset($event) ? $event['omschrijving'] : "";
                   <td><?php echo $row['user_id']; ?></td>
                   <td><?php echo $row['naam']; ?></td>
                   <td><?php echo $row['email']; ?></td>
-                  <td><?php if ($row['toegelaten'] == 0){
-                            echo "nee";}
-                            else echo "ja"; ?></td>
-                  <td><a type="button" class="btn btn-danger" href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder deelnemer</a></td>
-                  <td><a type="button" class="btn btn-success" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?>">Accepteer deelnemer</a></td>  
                  <!-- ipv < ?php kan je ook <= zonder echo gebruiken -->
                 </tr>
                 <?php $counter++ ; ?>
@@ -84,7 +73,6 @@ $eventnaam = isset($event) ? $event['omschrijving'] : "";
         </table>
         
         <!--
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
       </div>
     </div>
 
