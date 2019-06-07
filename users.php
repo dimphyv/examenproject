@@ -40,7 +40,12 @@ class users extends db
         $a ="INSERT INTO ".$table." (email, naam, toegelaten, wachtwoord) VALUES ('".$email."','". $naam."','". $toegelaten."','". $wachtwoord."')";
         //var_dump($a);
         $stmt = $this->conn->prepare($a);
-        $stmt->execute();
+        try { 
+             $stmt->execute();
+            }catch (Exception $e){
+                echo "";
+              }
+            
     }
     //toelating wijzigen, 0 is niet toegelaten, 1 is toegelaten
     public function wijzig_toelating($table, $user_id, $toegelaten){
@@ -69,7 +74,7 @@ class users extends db
         return false;
     }
 
-        //vraag alle users op uit de database
+        //vraag alle users op uit de database die meegaan met een evenement
     public function getEvenementData($table = null, $evenment_id = null){
         $a = "SELECT users.user_id, users.naam, users.email, users.toegelaten FROM ".$table." join evenementuser  ON users.user_id=evenementuser.user_id where evenement_id='".$evenment_id."'";
         $stmt = $this->conn->prepare($a); 
