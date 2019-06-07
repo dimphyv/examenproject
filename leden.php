@@ -2,14 +2,14 @@
 
 
 require_once 'users.php';
-//require_once 'db.php';
 
-        
+
+      //users object aangemaakt, functie aangeroepen  
 $leden = new users();
 $ledenlijst = $leden->getAllData('users');
-        //var_dump($ledenlijst);
         
-        ?>
+        
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,7 +19,7 @@ $ledenlijst = $leden->getAllData('users');
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    
     <title>Club Leden</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
@@ -39,7 +39,7 @@ $ledenlijst = $leden->getAllData('users');
       </div>
     </nav>
 
-    <h1 class="text-center">Leden</h1>
+    <h1 class="text-center">Dit zijn onze leden</h1>
     <div class="row">
       <div class="col-8 offset-2">
         <table class="table table-hover">
@@ -66,10 +66,10 @@ $ledenlijst = $leden->getAllData('users');
                   <td><?php if ($row['toegelaten'] == 0){
                             echo "nee";}
                             else echo "ja"; ?></td>
-                  <td><a type="button" class="btn btn-danger"  href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder deelnemer</a></td>
-                  <td><a type="button" class="btn btn-success  <?php if ($row['toegelaten'] == 1):?>disabled <?php endif ?>" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?> ">Accepteer deelnemer</a></td>  
-                  
-                 <!-- ipv < ?php kan je ook <= zonder echo gebruiken -->
+                  <td><a type="button" class="btn btn-danger"  href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder</a></td>
+                  <td><a type="button" class="btn btn-success  <?php if ($row['toegelaten'] == 1):?>disabled <?php endif ?>" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?> ">Accepteer</a></td>  
+                  <td><a href="wijzigenleden.php?id=<?php echo $row['user_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
+                 
                 </tr>
                 <?php $counter++ ; ?>
 
@@ -79,10 +79,7 @@ $ledenlijst = $leden->getAllData('users');
           </tbody>
         </table>
         
-        <!--
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
-      </div>
-    </div>
+        
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
