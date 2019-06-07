@@ -1,12 +1,18 @@
 <?php
-//require_once 'db.php';
+
+
+require_once 'users.php';
 require_once 'events.php';
-require_once 'eventsusers.php';
+//require_once 'db.php';
 session_start();
+$evenment_id = $_GET['evenement_id'];   
+$leden = new users();
+$ledenlijst = $leden->getEvenementData('users', $evenment_id);
+
 $events = new events();
-$evenementen = $events->getAllData('evenementen');
-$_SESSION['returnPage'] = 'leden.php';
-//var_dump($_SESSION);     
+$event = $events->getDataById('evenementen' , $evenment_id);
+$eventnaam = isset($event) ? $event['omschrijving'] : "";
+        
 ?>
 
 
@@ -20,64 +26,54 @@ $_SESSION['returnPage'] = 'leden.php';
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Club Evenementen</title>
+    <title>Club Leden</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0 ; ?>
    
-   
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
       
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <div class="navbar-nav mr-auto mt-2 mt-lg-0">
         
         </div>
         <form class="form-inline my-2 my-lg-0">
-        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="leden.php" id="users">Leden</a>
+          <a type="button" class="btn btn-update" href="evenementen.php" id="newevent">Evenement</a>
           <a type="button" href="logoff.php" class="btn btn-outline-success my-2 my-sm-0">Afmelden</a>
         </form>
       </div>
     </nav>
 
-
-
-    <h1 class="text-center">Evenementen</h1>
+    <h1 class="text-center">Leden die meegaan naar <?php echo $eventnaam ?></h1>
     <div class="row">
       <div class="col-8 offset-2">
         <table class="table table-hover">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Datum</th>
-              <th scope="col">Omschrijving</th>
-              <th></th>
+              <th scope="col">Naam</th>
+              <th scope="col">Email</th>
+              <th scope="col">Geaccepteerd</th>
               <th></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            <?php if(count($evenementen)>0): ?>
+            <?php if(count($ledenlijst)>0): ?>
               <?php $counter=0 ; ?>
 
-              <?php while($counter<count($evenementen)) :?>
-                <?php $row = $evenementen[$counter]; ?>
+              <?php while($counter<count($ledenlijst)) :?>
+                <?php $row = $ledenlijst[$counter]; ?>
                 <tr>
-                  <td><?php echo $row['evenement_id']; ?></td>
-                  <td><?php echo $row['datum']; ?></td>
-                  <td><?php echo $row['omschrijving']; ?></td>
-                  <?php
-                    $eventuser = new eventsusers();
-                    if($eventuser->existEventUser('evenementuser', $row['evenement_id'] , $usercheckid)){
-                      echo '<td><a href="uitschrijven.php?event_id='. $row['evenement_id'].'&user_id='.$usercheckid.'"  class="btn btn-success" type="button">Uitschrijven</a></td>';
-                    } else {
-                      echo '<td><a href="inschrijven.php?event_id='. $row['evenement_id'].'&user_id='.$usercheckid.'"  class="btn btn-warning" type="button">Inschrijven</a></td>';
-                    }
-                  ?>
-                  
-                  <td><a href="deelnemers.php?evenement_id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Deelnemers</a></td>
-                  <td><a href="wijzigenevenement.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
+                  <td><?php echo $row['user_id']; ?></td>
+                  <td><?php echo $row['naam']; ?></td>
+                  <td><?php echo $row['email']; ?></td>
+                  <td><?php if ($row['toegelaten'] == 0){
+                            echo "nee";}
+                            else echo "ja"; ?></td>
+                  <td><a type="button" class="btn btn-danger" href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder deelnemer</a></td>
+                  <td><a type="button" class="btn btn-success" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?>">Accepteer deelnemer</a></td>  
+                 <!-- ipv < ?php kan je ook <= zonder echo gebruiken -->
                 </tr>
                 <?php $counter++ ; ?>
 
@@ -86,6 +82,9 @@ $_SESSION['returnPage'] = 'leden.php';
           </tr>
           </tbody>
         </table>
+        
+        <!--
+        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>-->
       </div>
     </div>
 

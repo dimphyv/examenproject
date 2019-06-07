@@ -15,7 +15,7 @@ var_dump($_POST);
 //die();
 if(isset($_POST['cancel']))
 {
-    relocator('leden.php');
+    relocator($_SESSION['returnPage']);
 } 
 if($_SERVER['REQUEST_METHOD']=="POST")
 {

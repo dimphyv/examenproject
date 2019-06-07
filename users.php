@@ -69,7 +69,15 @@ class users extends db
         return false;
     }
 
-    
+        //vraag alle users op uit de database
+    public function getEvenementData($table = null, $evenment_id = null){
+        $a = "SELECT users.user_id, users.naam, users.email, users.toegelaten FROM ".$table." join evenementuser  ON users.user_id=evenementuser.user_id where evenement_id='".$evenment_id."'";
+        $stmt = $this->conn->prepare($a); 
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll();
+    }
+
 
     
 }
