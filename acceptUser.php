@@ -1,6 +1,9 @@
 <?php
 require_once 'users.php';
 require_once 'function.php';
+require_once 'function.php';
+cookieStillAlive();
+
 $user_id = isset($_GET['user_id']) ? $_GET['user_id'] : 0;
 
 // lid wordt toegelaten

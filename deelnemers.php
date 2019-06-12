@@ -1,8 +1,11 @@
 <?php
+session_start();
+
 require_once 'users.php';
 require_once 'events.php';
+require_once 'function.php';
+cookieStillAlive();
 
-session_start();
 // evenememt id ophalen uit GET
 $evenement_id = isset($_GET['evenement_id']) ? $_GET['evenement_id'] : 0 ;   
 // Leden opzoeken die voor een bepaald evenement zijn ingeschreven, het evenement_id is bepalend hiervoor

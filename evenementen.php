@@ -1,8 +1,10 @@
 <?php
 //require_once 'db.php';
+session_start();
 require_once 'events.php';
 require_once 'eventsusers.php';
-session_start();
+require_once 'function.php';
+cookieStillAlive();
 // Opvragen van alle evenementen in database
 $events = new events();
 $evenementen = $events->getAllData('evenementen');

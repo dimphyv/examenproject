@@ -1,11 +1,13 @@
 <?php
 // if not load continue with code
+session_start();
 include_once 'function.php';
 // if not load, stop programm
 require_once 'db.php';
 require_once 'users.php';
+require_once 'function.php';
+cookieStillAlive();
 
-session_start();
 $_SESSION['status'] = null;
 $_SESSION['newUserStatus'] = null;
 $_SESSION['returnPage'] = 'index.php';
