@@ -4,18 +4,17 @@
 
 <b>Planning</b><br>
 <b>Rollen verdeling</b><br>
-<b>Beschrijving van het project</b><br></b><br>
+<b>Beschrijving van het project</b><br>
 <b>Databases</b><br>
-<b>Planning</b><br>
-Inhoudsopgave 
-Planning
-Rollen verdeling
-Beschrijving van het project
-Databases
-Planning
-Interne rollen verdeling 
+<b>Planning</b><br><br>
+<strong>Inhoudsopgave </strong>  
+<ul><li>Planning</li>
+<li>Rollen verdeling</li>
+<li>Beschrijving van het project</li>
+<li>Databases</li>
+<li>Planning</li></ul>
+<strong>Interne rollen verdeling </strong>  
 
-Interne rollen verdeling
 
 
 
