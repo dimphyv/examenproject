@@ -1,45 +1,49 @@
-# examenproject
+# Examenproject Club website 
 <br>
-<b>Inhoudsopgave</b><br>
 
-<b>Planning</b><br>
-<b>Rollen verdeling</b><br>
-<b>Beschrijving van het project</b><br>
-<b>Databases</b><br>
-<b>Planning</b><br><br>
 <strong>Inhoudsopgave </strong>  
 <ul><li>Planning</li>
 <li>Rollen verdeling</li>
 <li>Beschrijving van het project</li>
 <li>Databases</li>
 <li>Planning</li></ul>
-<strong>Interne rollen verdeling </strong>  
+<strong>Interne rollen verdeling </strong>  <br>
 
 
 
 
-Beschrijving van het project
-Beschrijving van het project 
+<strong>Beschrijving van het project</strong>
+Website voor motorclub<br>
+<ul>
+  <li>inloggen</li>
+  <li>nieuw lid aanmaken</li>
+  <li>evenementen bekijken en inschrijven(alleen leden)</li>
+  <li>evenement aanmaken, wijzigen en verwijderen</li>
+  <li>ledenlijst bekijken</li>
+  <li>evenement deelnemers lijst bekijken</li>
+  <li>lid accepteren, wijzigen, verwijderen</li>
+</ul>
 
-master
 
-Een website voor een club, met een inlogsysteem voor leden.
-Daarnaast een evenementen pagina waar leden op in kunnen schrijven.
-De leden kunnen zelf een evenement toevoegen.
-Inschrijven op een evenement kan alleen als je als lid ingelogd bent op de website.
-De databases:
-Users
-user_id naam
-email
-wachtwoord
-geaccepteerd ja/nee
 
-Evenementen
-evenement_id
-datum
-omschrijving
-geannuleerd?
-master
+
+<strong>De database: club</strong><br>
+<b>Users tabel</b><br>
+user_id naam<br>
+email<br>
+wachtwoord<br>
+geaccepteerd ja/nee<br>
+
+<b>Evenementen tabel</b><br>
+evenement_id<br>
+datum<br>
+omschrijving<br>
+geannuleerd<br>
+
+<b>Evenement/user tabel</b><br>
+user_id<br>
+evenement_id<br>
+
 
 Pages: 
 
