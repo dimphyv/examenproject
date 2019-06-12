@@ -1,4 +1,8 @@
+<?php
+require_once 'function.php';
+cookieStillAlive();
 
+?>
 
 <html>
 <!--Dit is de pagina om een nieuw evenement te maken en in de database in te voeren -->

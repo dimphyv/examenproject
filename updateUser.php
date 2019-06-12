@@ -1,8 +1,10 @@
 <?php
 
+session_start();
 require_once 'users.php';
 require_once 'eventsusers.php';
-session_start();
+require_once 'function.php';
+cookieStillAlive();
 
 var_dump($_POST);
 if(isset($_POST['cancel']))

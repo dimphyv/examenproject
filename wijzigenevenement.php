@@ -2,6 +2,7 @@
 require_once 'function.php';
 require_once 'events.php';
 require_once 'db.php';
+cookieStillAlive();
 $events = new events();
 $event = $events->getDataById('evenementen', $_GET['id']);
 ?>

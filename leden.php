@@ -2,6 +2,8 @@
 
 
 require_once 'users.php';
+require_once 'function.php';
+cookieStillAlive();
 
 
       //users object aangemaakt, functie aangeroepen  

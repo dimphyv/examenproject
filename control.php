@@ -5,8 +5,6 @@ include_once 'function.php';
 // if not load, stop programm
 require_once 'db.php';
 require_once 'users.php';
-require_once 'function.php';
-cookieStillAlive();
 
 $_SESSION['status'] = null;
 $_SESSION['newUserStatus'] = null;

@@ -2,6 +2,7 @@
 require_once 'function.php';
 require_once 'users.php';
 //require_once 'db.php';
+cookieStillAlive();
 
 $users = new users();
 $user = $users->getDataById('users', $_GET['id']);
