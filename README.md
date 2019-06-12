@@ -8,11 +8,11 @@
 <li>Databases</li>
 <li>Planning</li></ul>
 <strong>Interne rollen verdeling </strong>  <br>
+samenwerking<br>
 
 
 
-
-<strong>Beschrijving van het project</strong>
+<strong>Beschrijving van het project</strong><br>
 Website voor motorclub<br>
 <ul>
   <li>inloggen</li>
@@ -25,9 +25,7 @@ Website voor motorclub<br>
 </ul>
 
 
-
-
-<strong>De database: club</strong><br>
+<strong>De database: club</strong><br><br>
 <b>Users tabel</b><br>
 user_id naam<br>
 email<br>
@@ -45,25 +43,13 @@ user_id<br>
 evenement_id<br>
 
 
-Pages: 
-
-landingspage log in velden user/password -> evenementen pagina die uit de database gehaald worden button nieuwe aanmelding -> nieuwe pagina met formulier naam/email/password
-evenementen pagina: lijst evenementen knoppen inschrijven/uitschrijven/ lijst meegaande leden/wijzigen->zelfde form voor nieuw event met opgehaalde data uit de database nieuwe evenement toevoegen button -> formulier new event button lid -> lijst alle leden
-Databases: 
-
-Users
-user_id integer primary key
-naam varchar
-email varchar
-toegelaten boolean default is false
-wachtwoord varchar
-Evenement evenement_id integer primary key datum date omschrijving text geannuleerd tinyInt
-
-
-evenement_id integer primary key
-datum date
-omschrijving text
-geannuleerd tinyInt
-Evenement/user
-evenement_id
-user_id
+<strong>Pagina's: </strong><br>
+<ul>
+  <li>indexpagina met inlogscherm/nieuw lid button</li><br>
+  <li>nieuw lid pagina</li><br>
+  <li>evenementen pagina</li><br>
+  <li>deelnemers evenementen pagina</li><br>
+  <li>nieuw evenement pagina</li><br>
+  <li>wijzigen lid/evenement pagina's</li><br>
+  <li>ledenlijst pagina</li><br>
+</ul>
