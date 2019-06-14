@@ -55,3 +55,5 @@ evenement_id<br>
 </ul>
 
 link naar figma https://www.figma.com/file/BwTzzs3sxQCJiDgf7vJhAn6T/Aanmeldscherm?node-id=0%3A1 <br>
+
+link naar dbdiagram.io  https://dbdiagram.io/d/5d03f991fff7633dfc8e3678
