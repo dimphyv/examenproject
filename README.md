@@ -36,7 +36,7 @@ geaccepteerd ja/nee<br>
 evenement_id<br>
 datum<br>
 omschrijving<br>
-geannuleerd<br>
+
 
 <b>Evenement/user tabel</b><br>
 user_id<br>
