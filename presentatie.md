@@ -7,6 +7,8 @@ Luc
 
 Dimphy
 - Figma
+- dbdiagram.io
+- sql database bekijken
 - 1e blik op programma (zelf bepalen tot hoe ver)
 
 Luc
