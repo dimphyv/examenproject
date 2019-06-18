@@ -31,4 +31,11 @@ function cookieStillAlive(){
   }
 
 }
+
+  function userIsAdmin(){
+    $userIsAdmin = FALSE;
+    if(isset($_COOKIE['userIsAdmin']))
+    {$userIsAdmin = true;};
+    return $userIsAdmin;
+  }
 ?>

@@ -34,7 +34,7 @@
                   <input type="password" class="form-control" id="password" name="password" placeholder="Vul wachtwoord in">
                 </div>
                 <button type="submit" class="btn btn-primary" id="add" name="add">Toevoegen</button>
-                <button type="submit" class="btn btn-primary" id="cancel" name="cancel">Anuleren</button>
+                <button type="submit" class="btn btn-primary" id="cancel" name="cancel">Annuleren</button>
                </form>
              </div>
            </div>

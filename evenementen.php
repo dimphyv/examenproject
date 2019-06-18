@@ -5,6 +5,7 @@ require_once 'events.php';
 require_once 'eventsusers.php';
 require_once 'function.php';
 cookieStillAlive();
+//var_dump($_COOKIE['userIsAdmin']);
 // Opvragen van alle evenementen in database
 $events = new events();
 $evenementen = $events->getAllData('evenementen');
