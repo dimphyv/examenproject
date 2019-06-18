@@ -1,13 +1,18 @@
 <?php
 //require_once 'db.php';
+session_start();
 require_once 'events.php';
 require_once 'eventsusers.php';
+require_once 'function.php';
+cookieStillAlive();
+//var_dump($_COOKIE['userIsAdmin']);
+// Opvragen van alle evenementen in database
+$events = new events();
+$evenementen = $events->getAllData('evenementen');
+$_SESSION['returnPage'] = 'leden.php';
+?>
 
-        $events = new events();
-        $evenementen = $events->getAllData('evenementen');
-        //var_dump($evenementen);
-        
-        ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,6 +24,7 @@ require_once 'eventsusers.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Club Evenementen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <?php $usercheckid = isset($_COOKIE['usercheckedid']) ? $_COOKIE['usercheckedid'] : 0 ; ?>
@@ -32,7 +38,7 @@ require_once 'eventsusers.php';
         </div>
         <form class="form-inline my-2 my-lg-0">
         <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
+        <a type="button" class="btn btn-update" href="leden.php" id="users">Leden</a>
           <a type="button" href="logoff.php" class="btn btn-outline-success my-2 my-sm-0">Afmelden</a>
         </form>
       </div>
@@ -40,7 +46,7 @@ require_once 'eventsusers.php';
 
 
 
-    <h1 class="text-center">Evenementen <?php echo $usercheckid; ?></h1>
+    <h1 class="text-center">Evenementen</h1>
     <div class="row">
       <div class="col-8 offset-2">
         <table class="table table-hover">
@@ -49,6 +55,7 @@ require_once 'eventsusers.php';
               <th scope="col">ID</th>
               <th scope="col">Datum</th>
               <th scope="col">Omschrijving</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
@@ -72,7 +79,7 @@ require_once 'eventsusers.php';
                     }
                   ?>
                   
-                  <td><a href="deelnemers.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Deelnemers</a></td>
+                  <td><a href="deelnemers.php?evenement_id=<?php echo $row['evenement_id']; ?>" class="btn btn-update" type="button">Deelnemers</a></td>
                   <td><a href="wijzigenevenement.php?id=<?php echo $row['evenement_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
                 </tr>
                 <?php $counter++ ; ?>
@@ -82,8 +89,6 @@ require_once 'eventsusers.php';
           </tr>
           </tbody>
         </table>
-        <a type="button" class="btn btn-update" href="newevent.php" id="newevent">Nieuw evenement</a>
-        <a type="button" class="btn btn-update" href="add.php" id="users">Leden</a>
       </div>
     </div>
 

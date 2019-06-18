@@ -19,4 +19,23 @@ function checkUser($myUsers,$email,$password){
   }
   return $correctUser;
 }
+
+function cookieStillAlive(){
+  if(isset($_COOKIE['usercheckedid']))
+    {
+      setcookie("usercheckedid",$_COOKIE['usercheckedid'],time()+600);
+    }
+  else
+  {
+    relocator("index.php");
+  }
+
+}
+
+  function userIsAdmin(){
+    $userIsAdmin = FALSE;
+    if(isset($_COOKIE['userIsAdmin']))
+    {$userIsAdmin = true;};
+    return $userIsAdmin;
+  }
 ?>

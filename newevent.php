@@ -1,9 +1,11 @@
 <?php
-
+require_once 'function.php';
+cookieStillAlive();
 
 ?>
 
 <html>
+<!--Dit is de pagina om een nieuw evenement te maken en in de database in te voeren -->
    <head>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

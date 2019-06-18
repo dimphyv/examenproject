@@ -1,8 +1,5 @@
 <?php
-  ini_set('display_error', 5);
-  error_reporting(E_ALL);
-  $index=0;
-  session_start();
+  
 ?>
 
 <html>
@@ -20,7 +17,7 @@
        <div class="container">
          <div class="row">
            <div class="col-8 offset-2">
-             <h1 class="text-center mt-2 pt-5 pb-2">Nieuwe deelnemer</h1>
+             <h1 class="text-center mt-2 pt-5 pb-2">Nieuwe lid aanmelden</h1>
              <div class="row">
                <form action="aanmelding.php" method="POST" class="mb-3 pl-2 pr-2">
                  <div class="form-group">
@@ -28,27 +25,22 @@
                   <label for="naam">Naam</label>
                   <input type="text" class="form-control" id="naam" name="naam" placeholder="Naam">
                 </div>
-                  <label for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                  <label for="email">Email adres</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Vul email adres in">
                   <small id="emailHelp" class="form-text text-muted">Uw gegevens worden nergens anders voor gebruikt dan registratie.</small>
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                  <label for="password">Wachtwoord</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Vul wachtwoord in">
                 </div>
-                <button type="submit" class="btn btn-primary">Aanmelden</button>
+                <button type="submit" class="btn btn-primary" id="add" name="add">Toevoegen</button>
+                <button type="submit" class="btn btn-primary" id="cancel" name="cancel">Annuleren</button>
                </form>
              </div>
            </div>
 
           <?php
-         /* if(isset($_SESSION['status'])){
-            if($_SESSION['status'][0] === 'failed'){
-              echo '<div class="col-8 offset-2 alert alert-danger mt-5">';
-              echo "<p>".$_SESSION['status'][1]."</p>";
-              echo '</div>';
-            }
-          }*/
+        
          ?>
        </div>
      </div>

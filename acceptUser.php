@@ -1,12 +1,15 @@
 <?php
 require_once 'users.php';
+require_once 'function.php';
+require_once 'function.php';
+cookieStillAlive();
 
-$user_id = $_GET['user_id'];
+$user_id = isset($_GET['user_id']) ? $_GET['user_id'] : 0;
 
-//var_dump($user_id);
+// lid wordt toegelaten
 $user = new users();
 $user->wijzig_toelating('users', $user_id, 1);
-
+relocator("leden.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,5 +25,3 @@ $user->wijzig_toelating('users', $user_id, 1);
     <a href="leden.php">Terug naar ledenlijst</a>
 
 
-</body>
-</html>
