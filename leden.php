@@ -4,6 +4,9 @@
 require_once 'users.php';
 require_once 'function.php';
 cookieStillAlive();
+$userIsAdmin = userIsAdmin();
+
+  
 
 
       //users object aangemaakt, functie aangeroepen  
@@ -68,9 +71,9 @@ $ledenlijst = $leden->getAllData('users');
                   <td><?php if ($row['toegelaten'] == 0){
                             echo "nee";}
                             else echo "ja"; ?></td>
-                  <td><a type="button" class="btn btn-danger"  href="deleteUser.php?user_id=<?php echo $row['user_id']; ?>">Verwijder</a></td>
-                  <td><a type="button" class="btn btn-success  <?php if ($row['toegelaten'] == 1):?>disabled <?php endif ?>" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?> ">Accepteer</a></td>  
-                  <td><a href="wijzigenleden.php?id=<?php echo $row['user_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
+                  <td><a type="button" class="btn btn-danger <?php if (!$userIsAdmin):?> hidden <?php endif ?>"href="deleteUser.php?user_id=<?php echo $row['user_id']; ?> ">Verwijder</a></td>
+                  <td><a type="button" class="btn btn-success  <?php if (($row['toegelaten'] == 1)||(!$userIsAdmin)):?> hidden <?php endif ?>" href="acceptUser.php?user_id=<?php echo $row['user_id']; ?> ">Accepteer</a></td>  
+                  <td><a type="button" class="btn btn-secondary"href="wijzigenleden.php?id=<?php echo $row['user_id']; ?>" class="btn btn-danger" type="button">Wijzigen</a></td>
                  
                 </tr>
                 <?php $counter++ ; ?>

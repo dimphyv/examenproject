@@ -21,8 +21,12 @@ if($_SERVER['REQUEST_METHOD']=="POST")
     $password = $_POST['password'];
     $user = new users();
     $userFound = $user->checkuser("users", $email, $password);
+    
     if($userFound) {
       //setcookie("usercheckedid",$user[0]['user_id'],time()+600);
+        if($email === 'admin@mail.com'){
+          setcookie("userIsAdmin", time()+600);
+        }
       $_SESSION['status'] = null;
       relocator('evenementen.php');
     } else {
