@@ -5,7 +5,7 @@ class db
     protected $host, $username, $password, $dbname;
     public $conn;
 
-    public function __construct($host = "localhost", $username = "root", $password = "", $dbname = "club")
+    public function __construct($host = "localhost", $username = "User1", $password = "w8wphp", $dbname = "club")
     {
         $this->host = $host;
         $this->username = $username;
